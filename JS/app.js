@@ -27,6 +27,7 @@ let winner
 let tie
 let time = 5
 let interval
+let isGameOver = false
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
@@ -37,6 +38,7 @@ function init(){
     turn = "The Avengers"
     winner = false
     tie = false
+    isGameOver = false
 
     render()
 }
@@ -77,7 +79,14 @@ function updateMessage(){
     }
 }
 
+
 function handleClick(event){
+        if(isGameOver) {init() 
+            console.log('in isgame over')
+        return
+        
+        }
+
     console.log(event.target)
     const squareIndex = event.target.id
     if(!event.target.classList.contains("sqr")){
@@ -115,7 +124,6 @@ function checkForWinner(){
         if(first !== "" && second === first && third === first){
             winner = true
             stopTime()
-
         }
     }
     console.log(winner)
@@ -158,6 +166,8 @@ interval= setInterval(()=>{
     if(time === 0){
         stopTime()
         messageElement.textContent = "You ran out of time!"
+            isGameOver = true
+
         return
     }
     time--

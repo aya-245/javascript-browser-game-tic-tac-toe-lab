@@ -23,15 +23,28 @@ body {
   text-align: center;
 }
 
-.main{
+#main{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 #reset{
   background-color: #0b5473;
   color: white;
+  border: 2px solid black;
+  width: 50px;
+  height: 30px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#timer-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
 
